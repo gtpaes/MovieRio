@@ -238,3 +238,16 @@ document.querySelectorAll(".btn-whatsapp").forEach(botao => {
     );
   });
 });
+
+
+//tirando click duplo da zoom no Mobile
+
+let lastTouch = 0;
+
+document.addEventListener('touchend', function (e) {
+    let now = (new Date()).getTime();
+    if (now - lastTouch <= 300) {
+        e.preventDefault(); 
+    }
+    lastTouch = now;
+}, false);
