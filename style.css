@@ -13,7 +13,10 @@
   --fundo: #fafafa;
 }
 
-
+html {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent; 
+}
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;

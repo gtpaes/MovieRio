@@ -240,3 +240,17 @@ document.querySelectorAll(".btn-whatsapp").forEach(botao => {
 });
 
 
+
+
+let lastTouchTime = 0;
+
+document.addEventListener('touchend', (event) => {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTouchTime;
+    
+    // Se o tempo entre toques for menor que 500ms, é considerado duplo toque
+    if (tapLength < 300 && tapLength > 0) {
+        event.preventDefault(); // Impede o zoom
+    }
+    lastTouchTime = currentTime;
+});
