@@ -241,7 +241,7 @@ document.querySelectorAll(".btn-whatsapp").forEach(botao => {
 
 
 
-
+/*
 let lastTouchTime = 0;
 
 document.addEventListener('touchend', (event) => {
@@ -253,4 +253,4 @@ document.addEventListener('touchend', (event) => {
         event.preventDefault(); // Impede o zoom
     }
     lastTouchTime = currentTime;
-});
+});*/
