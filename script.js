@@ -242,12 +242,13 @@ document.querySelectorAll(".btn-whatsapp").forEach(botao => {
 
 //tirando click duplo da zoom no Mobile
 
-let lastTouch = 0;
+let lastTouchTime = 0;
 
-document.addEventListener('touchend', function (e) {
-    let now = (new Date()).getTime();
-    if (now - lastTouch <= 300) {
+document.addEventListener('touchstart', function(e) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTouchTime;
+    if (tapLength < 500 && tapLength > 0) {
         e.preventDefault(); 
     }
-    lastTouch = now;
-}, false);
+    lastTouchTime = currentTime;
+}, { passive: false });
