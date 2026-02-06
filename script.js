@@ -240,39 +240,3 @@ document.querySelectorAll(".btn-whatsapp").forEach(botao => {
 });
 
 
-//tirando click duplo da zoom no Mobile
-
-let lastTouchTime = 0;
-
-document.addEventListener('touchstart', function(e) {
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - lastTouchTime;
-    if (tapLength < 500 && tapLength > 0) {
-        e.preventDefault(); 
-    }
-    lastTouchTime = currentTime;
-}, { passive: false });
-
-// Bloquear zoom em botões da galeria
-const galeriaBotoes = document.querySelectorAll('.galeria-controls button');
-galeriaBotoes.forEach(botao => {
-  botao.addEventListener('touchstart', function(e) {
-    e.preventDefault(); // evita zoom
-    this.click();        // mantém a funcionalidade
-  }, { passive: false });
-});
-
-// Bloquear zoom no menu mobile (botão toggle e links)
-const menuLinks = document.querySelectorAll('.nav-links a');
-
-menuToggle.addEventListener('touchstart', function(e) {
-  e.preventDefault();
-  this.click();
-}, { passive: false });
-
-menuLinks.forEach(link => {
-  link.addEventListener('touchstart', function(e) {
-    e.preventDefault();
-    this.click();
-  }, { passive: false });
-});
