@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produto | MoveRio</title>
+
+    <link rel="stylesheet" href="produto.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/logo-moverio.png" alt="Moverio" />
+          </a>
+        </div>
+
+        <a href="index.html" class="btn-outline">← Voltar</a>
+      </nav>
+    </header>
+
+    <!-- PRODUTO -->
+    <main>
+      <section class="produto-detalhe">
+        <div class="container produto-wrapper">
+          <!-- GALERIA -->
+          <div class="produto-galeria-detalhe">
+            <button class="galeria-btn prev">‹</button>
+
+            <div class="galeria-track">
+              <!-- imagens entram via JS -->
+            </div>
+
+            <button class="galeria-btn next">›</button>
+
+            <!-- MINIATURAS -->
+            <div class="galeria-miniaturas">
+              <!-- imagens pequenas entram via JS -->
+            </div>
+          </div>
+
+          <!-- INFOS -->
+          <div class="produto-info">
+            <h1 id="produto-nome"></h1>
+            <p id="produto-descricao"></p>
+            <strong id="produto-preco"></strong>
+
+            <a href="#" class="btn-primary" id="btn-whatsapp" target="_blank">
+              Comprar pelo WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2026 MoveRio</p>
+      </div>
+    </footer>
+
+    <script>
+      /* BASE DE PRODUTOS*/
+
+      const produtos = {
+        cropped: {
+          nome: "Cropped Fitness",
+          preco: "R$ 89,90",
+          descricao:
+            "Cropped confortável e estiloso, ideal para treinos leves ou para o dia a dia.",
+          imagens: [
+            "img/cropped.jpeg",
+            "img/cropped (1).jpeg",
+            "img/cropped (2).jpeg",
+            "img/cropped (3).jpeg",
+          ],
+        },
+
+        "conjunto-calça-top": {
+          nome: "Conjunto Calça + Top",
+          preco: "R$ 179,90",
+          descricao:
+            "Conjunto com alta sustentação, ideal para treinos intensos.",
+          imagens: [
+            "img/conjunto(calça+top) (1).jpeg",
+            "img/conjunto(calça+top) (4).jpeg",
+            "img/conjunto(calça+top) (3).jpeg",
+            "img/conjunto(calça+top) (2).jpeg",
+          ],
+        },
+
+        "conjunto-short-top": {
+          nome: "Conjunto Short + Top",
+          preco: "R$ 149,90",
+          descricao: "Leve, moderno e confortável para dias quentes.",
+          imagens: [
+            "img/conjunto(short+top) (1).jpeg",
+            "img/conjunto(short+top) (3).jpeg",
+            "img/conjunto(short+top) (2).jpeg",
+          ],
+        },
+
+        "jaqueta-aerodry": {
+          nome: "Jaqueta AeroDry",
+          preco: "R$ 189,90",
+          descricao: "Jaqueta leve, respirável e ideal para qualquer clima.",
+          imagens: [
+            "img/jaqueta aerodry (1).jpeg",
+            "img/jaqueta aerodry (2).jpeg",
+          ],
+        },
+
+        "conjunto-top-bermuda": {
+          nome: "Conjunto Top + Bermuda",
+          preco: "R$ 149,90",
+          descricao: "Conjunto versátil, confortável e estiloso.",
+          imagens: [
+            "img/conjunto top+bermuda.jpeg",
+            "img/conjunto top+bermuda (2).jpeg",
+            "img/conjunto top+bermuda (3).jpeg",
+            "img/conjunto top+bermuda (4).jpeg",
+          ],
+        },
+
+        "corta-vento": {
+          nome: "Corta Vento",
+          preco: "R$ 249,90",
+          descricao: "Proteção contra vento com estilo e conforto.",
+          imagens: [
+            "img/corta vento.jpeg",
+            "img/corta vento (1).jpeg",
+            "img/corta vento (2).jpeg",
+          ],
+        },
+      };
+
+      /* PEGAR PRODUTO DA URL*/
+
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get("produto");
+
+      const produto = produtos[slug];
+
+      if (!produto) {
+        document.body.innerHTML =
+          "<h2 style='text-align:center'>Produto não encontrado</h2>";
+        throw new Error("Produto inválido");
+      }
+
+      document.getElementById("produto-nome").textContent = produto.nome;
+      document.getElementById("produto-descricao").textContent =
+        produto.descricao;
+      document.getElementById("produto-preco").textContent = produto.preco;
+
+      /* GALERIA */
+
+      const track = document.querySelector(".galeria-track");
+      let index = 0;
+
+      produto.imagens.forEach((src, i) => {
+        const img = document.createElement("img");
+        img.src = src;
+        if (i === 0) img.classList.add("active");
+        track.appendChild(img);
+      });
+
+      const imgs = track.querySelectorAll("img");
+
+      function updateGaleria() {
+        imgs.forEach((img) => img.classList.remove("active"));
+        imgs[index].classList.add("active");
+      }
+
+      document.querySelector(".galeria-btn.next").onclick = () => {
+        index = (index + 1) % imgs.length;
+        updateGaleria();
+      };
+
+      document.querySelector(".galeria-btn.prev").onclick = () => {
+        index = (index - 1 + imgs.length) % imgs.length;
+        updateGaleria();
+      };
+
+      /*WHATSAPP*/
+
+      const mensagem = encodeURIComponent(
+        `Oi! Quero comprar o produto: ${produto.nome} (${produto.preco})`,
+      );
+
+      document.getElementById("btn-whatsapp").href =
+        `https://wa.me/5524992145076?text=${mensagem}`;
+
+        const miniaturas = document.querySelector(".galeria-miniaturas");
+
+produto.imagens.forEach((src, i) => {
+  const thumb = document.createElement("img");
+  thumb.src = src;
+  if (i === 0) thumb.classList.add("active");
+
+  // clicar na miniatura muda a imagem principal
+  thumb.onclick = () => {
+    index = i;
+    updateGaleria();
+  };
+
+  miniaturas.appendChild(thumb);
+});
+
+function updateGaleria() {
+  imgs.forEach(img => img.classList.remove("active"));
+  imgs[index].classList.add("active");
+
+  // atualizar miniaturas
+  const thumbs = miniaturas.querySelectorAll("img");
+  thumbs.forEach(t => t.classList.remove("active"));
+  thumbs[index].classList.add("active");
+}
+    </script>
+  </body>
+</html>

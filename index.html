@@ -3,28 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MoveRio | Moda Fitness</title>
+    <title>MoveRio | Moda Fitness Feminina</title>
+
+<meta name="description" content="Moda fitness feminina com estilo e conforto. Conjuntos, cropped, jaquetas e roupas fitness ideais para treino e dia a dia.">
+
+<meta name="keywords" content="moda fitness feminina, conjunto fitness, cropped fitness, roupa de academia feminina">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="MoveRio Fitness">
+
+<meta property="og:title" content="MoveRio Fitness | Moda Fitness Feminina">
+<meta property="og:description" content="Roupas fitness femininas com conforto e estilo.">
+<meta property="og:type" content="website">
+
 
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-     <div class="intro">
-        <div class="intro-logo">
-           <img src="img/logo-moverio.png" alt="Moverio">
-        </div>
-
-        <div class="intro-left"></div>
-        <div class="intro-right"></div>
+    <!--INTRO-->
+    <div class="intro">
+      <div class="intro-logo">
+        <img src="img/logo-moverio.png" alt="Moverio" />
       </div>
-  
-    
+
+      <div class="intro-left"></div>
+      <div class="intro-right"></div>
+    </div>
 
     <div id="site-content">
+      <!--header-->
       <header>
-       <div class="menu-overlay"></div>
+        <div class="menu-overlay"></div>
         <nav class="nav-container">
           <div class="logo">
-            <img src="img/logo-moverio.png" alt="logo-moverio" />
+            <a href="index.html">
+            <img src="img/logo-moverio.png" alt="Moverio" />
+          </a>
           </div>
           <button class="menu-toggle" aria-label="Abrir menu">
             <span class="icon">☰</span>
@@ -38,6 +52,7 @@
         </nav>
       </header>
       <main>
+        <!--Inicio-->
         <section id="inicio" class="hero">
           <div class="container-hero-content">
             <h1>Roupas fitness que acompanham seu movimento</h1>
@@ -45,124 +60,258 @@
               Conforto, estilo e liberdade para treinar, viver e se sentir bem
               todos os dias.
             </p>
-            <a href="https://wa.me/5524992145076?text=Oi!%20Quero%20comprar%20um%20produto%20da%20MoveRio" class="btn-primary" target="_blank">Comprar pelo WhatsApp</a>
+            <a
+              href="https://wa.me/5524992145076?text=Oi!%20Quero%20comprar%20um%20produto%20da%20MoveRio"
+              class="btn-primary"
+              target="_blank"
+              >Comprar pelo WhatsApp</a
+            >
           </div>
         </section>
+
+        <!--Produtos-->
         <section id="produtos" class="produtos">
           <div class="container">
             <h2>Nossos Produtos</h2>
-            <div class="produtos-grid">
-              <!-- CROPPED -->
-        <article class="produto-card" data-produto="Cropped"
-  data-preco="R$ 89,90">
-          
-  
-          <div class="produto-galeria">
-            <img src="img/cropped.jpeg" alt="Cropped Movierio">
-            <img src="img/cropped (1).jpeg" alt="Cropped Movierio ">
-            <img src="img/cropped (2).jpeg" alt="Cropped Movierio">
-            <img src="img/cropped (3).jpeg" alt="Cropped Movierio">
-          </div>
-          <h3>Cropped Fitness</h3>
-          <p>
-            Cropped confortável e estiloso, ideal para treinos leves ou
-            compor looks fitness no dia a dia.
-          </p>
-          <a href="#" class="btn-secundary btn-whatsapp" target="_blank">
-            Quero esse no WhatsApp
-          </a>
-        </article>
-        <!-- CONJUNTO CALÇA + TOP -->
-        <article class="produto-card" data-produto="Conjunto calça + top"
-  data-preco="R$ 179,90">
-          <div class="produto-galeria">
-            <img src="img/conjunto(calça+top) (1).jpeg" alt="Conjunto calça e top frente">
-            <img src="img/conjunto(calça+top) (4).jpeg" alt="Conjunto calça e top costas">
-            <img src="img/conjunto(calça+top) (3).jpeg" alt="Conjunto calça e top">
-            <img src="img/conjunto(calça+top) (2).jpeg" alt="Conjunto calça e top">
-          </div>
-          <h3>Conjunto Calça + Top</h3>
-          <p>
-            Conjunto completo com alta sustentação, perfeito para treinos
-            intensos e máxima liberdade de movimento.
-          </p>
-          <a href="#" class="btn-secundary btn-whatsapp" target="_blank">
-            Quero esse no WhatsApp
-          </a>
-        </article>
-        <!-- CONJUNTO SHORT + TOP -->
-        <article class="produto-card" data-produto="Conjunto short + top"
-  data-preco="R$ 149,90">
-          <div class="produto-galeria">
-            <img src="img/conjunto(short+top) (1).jpeg" alt="Conjunto short e top frente">
-            <img src="img/conjunto(short+top) (3).jpeg" alt="Conjunto short e top costas">
-            <img src="img/conjunto(short+top) (2).jpeg" alt="Conjunto short e top">
-          </div>
-          <h3>Conjunto Short + Top</h3>
-          <p>
-            Leve, moderno e confortável, ideal para dias quentes e treinos
-            ao ar livre.
-          </p>
-          <a href="#" class="btn-secundary btn-whatsapp" target="_blank">
-            Quero esse no WhatsApp
-          </a>
-        </article>
+
+            <!-- BOTÕES MOBILE / TV -->
+            <button class="produtos-nav prev">‹</button>
+            <button class="produtos-nav next">›</button>
+
+            <!-- TRACK -->
+            <div class="produtos-track">
+              <div class="produtos-grid">
+                <!-- CROPPED -->
+                <article
+                  class="produto-card"
+                  data-slug="cropped"
+                  data-produto="Cropped"
+                  data-preco="R$ 89,90"
+                >
+                  <div class="produto-galeria">
+                    <img src="img/cropped.jpeg" alt="Cropped Movierio" />
+                  
+                  </div>
+                  <h3>Cropped Fitness</h3>
+                  <p>
+                    Cropped confortável e estiloso, ideal para treinos leves ou
+                    compor looks fitness no dia a dia.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn-secundary btn-whatsapp"
+                    target="_blank"
+                  >
+                    Quero esse no WhatsApp
+                  </a>
+                </article>
+                <!-- CONJUNTO CALÇA + TOP -->
+                <article
+                  class="produto-card"
+                  data-slug="conjunto-calça-top"
+                  data-produto="Conjunto calça + top"
+                  data-preco="R$ 179,90"
+                >
+                  <div class="produto-galeria">
+                    <img
+                      src="img/conjunto(calça+top) (1).jpeg"
+                      alt="Conjunto calça e top frente"
+                    />
+                   
+                  </div>
+                  <h3>Conjunto Calça + Top</h3>
+                  <p>
+                    Conjunto completo com alta sustentação, perfeito para
+                    treinos intensos e máxima liberdade de movimento.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn-secundary btn-whatsapp"
+                    target="_blank"
+                  >
+                    Quero esse no WhatsApp
+                  </a>
+                </article>
+
+                <!-- CONJUNTO SHORT + TOP -->
+
+                <article
+                  class="produto-card"
+                  data-slug="conjunto-short-top"
+                  data-produto="Conjunto  short + top"
+                  data-preco="R$ 149,90"
+                >
+                  <div class="produto-galeria">
+                    <img
+                      src="img/conjunto(short+top) (1).jpeg"
+                      alt="Conjunto short e top frente"
+                    />
+                   
+                  </div>
+                  <h3>Conjunto Short + Top</h3>
+                  <p>
+                    Leve, moderno e confortável, ideal para dias quentes e
+                    treinos ao ar livre.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn-secundary btn-whatsapp"
+                    target="_blank"
+                  >
+                    Quero esse no WhatsApp
+                  </a>
+                </article>
+
+                <!--Jaqueta aeroDry-->
+
+                <article
+                  class="produto-card"
+                  data-slug="jaqueta-aerodry"
+                  data-produto="Jaqueta aeroDry"
+                  data-preco="R$ 189,90"
+                >
+                  <div class="produto-galeria">
+                    <img
+                      src="img/jaqueta aerodry (1).jpeg"
+                      alt="Jaqueta aeroDry"
+                    />
+
+                  </div>
+                  <h3>Jaqueta aeroDry</h3>
+                  <p></p>
+                  <a
+                    href="#"
+                    class="btn-secundary btn-whatsapp"
+                    target="_blank"
+                  >
+                    Quero esse no WhatsApp
+                  </a>
+                </article>
+
+                <!--Conjunto top + bermuda-->
+
+                <article
+                  class="produto-card"
+                  data-slug="conjunto-top-bermuda"
+                  data-produto="Conjunto top + bermuda"
+                  data-preco="R$ 149,90"
+                >
+                  <div class="produto-galeria">
+                    <img
+                      src="img/conjunto top+bermuda.jpeg"
+                      alt="Conjunto top + bermuda frente"
+                    />
+                    
+                  </div>
+                  <h3>Conjunto top + bermuda</h3>
+                  <p></p>
+                  <a
+                    href="#"
+                    class="btn-secundary btn-whatsapp"
+                    target="_blank"
+                  >
+                    Quero esse no WhatsApp
+                  </a>
+                </article>
+
+                <!--Corta vento-->
+
+                <article
+                  class="produto-card"
+                  data-slug="corta-vento"
+                  data-produto="Corta vento"
+                  data-preco="R$ 249,90"
+                >
+                  <div class="produto-galeria">
+                    <img src="img/corta vento.jpeg" alt="Corta vento frente" />
+                  </div>
+                  <h3>Corta vento</h3>
+                  <p></p>
+                  <a
+                    href="#"
+                    class="btn-secundary btn-whatsapp"
+                    target="_blank"
+                  >
+                    Quero esse no WhatsApp
+                  </a>
+                </article>
+              </div>
             </div>
           </div>
         </section>
-          <sections class="diferenciais">
-              <div class="container">
-                  <h2>Por que escolher a MoveRio?</h2>
-                   <div class="diferenciais-grid">
-            <div class="diferencial-item">
-              <h3>🌸 Conforto</h3>
-              <p>Modelagens pensadas para o corpo real.</p>
-            </div>
-            <div class="diferencial-item">
-              <h3>🧵 Qualidade</h3>
-              <p>Tecidos resistentes e duráveis.</p>
-            </div>
-            <div class="diferencial-item">
-              <h3>🇧🇷 Produção nacional</h3>
-              <p>Valorizando marcas e fornecedores locais.</p>
-            </div>
-            <div class="diferencial-item">
-              <h3>💗 Marca feminina</h3>
-              <p>Criada por mulheres, para mulheres.</p>
-            </div>
+
+        <!--Diferencial-->
+
+        <section class="diferenciais">
+          <div class="container">
+            <h2>Por que escolher a MoveRio?</h2>
+            <div class="diferenciais-grid">
+              <div class="diferencial-item">
+                <h3>🌸 Conforto</h3>
+                <p>Modelagens pensadas para o corpo real.</p>
               </div>
-          </sections>
-          <section class="sobre" id="sobre">
-              <div class="container">
-                  <h2>Sobre a MoveRio</h2>
-                  <p>A MoveRio é uma marca de moda fitness criada para mulheres que valorizam conforto,
-                  estilo e liberdade. Desenvolvemos peças que acompanham o ritmo do corpo real,
-                  do treino ao dia a dia, com qualidade e identidade própria. </p>
+              <div class="diferencial-item">
+                <h3>🧵 Qualidade</h3>
+                <p>Tecidos resistentes e duráveis.</p>
               </div>
-          </section>
+              <div class="diferencial-item">
+                <h3>🇧🇷 Produção nacional</h3>
+                <p>Valorizando marcas e fornecedores locais.</p>
+              </div>
+              <div class="diferencial-item">
+                <h3>💗 Marca feminina</h3>
+                <p>Criada por mulheres, para mulheres.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--Sobre-->
+        <section class="sobre" id="sobre">
+          <div class="container">
+            <h2>Sobre a MoveRio</h2>
+            <p>
+              A MoveRio é uma marca de moda fitness criada para mulheres que
+              valorizam conforto, estilo e liberdade. Desenvolvemos peças que
+              acompanham o ritmo do corpo real, do treino ao dia a dia, com
+              qualidade e identidade própria.
+            </p>
+          </div>
+        </section>
       </main>
-          <section id="contato" class="contato">
-              <div class="container">
-                  <h2>Vamos conversar?</h2>
-                  <p>Entre em contato e descubra a peça perfeita para você.</p>
-                  <div class="contato-acoes">
-                       <a href="https://wa.me/5524992145076?text=Oi!%20Quero%20comprar%20um%20produto%20da%20MoveRio" target="_blank" class="btn-primary">Falar no WhatsApp</a>
-                      <a href="https://www.instagram.com/moverio.resendee/" target="_blank" class="btn-outline">Instagram</a>
-                    </div>
-              </div>
-          </section>
-      
+
+      <!--Contato-->
+      <section id="contato" class="contato">
+        <div class="container">
+          <h2>Vamos conversar?</h2>
+          <p>Entre em contato e descubra a peça perfeita para você.</p>
+          <div class="contato-acoes">
+            <a
+              href="https://wa.me/5524992145076?text=Oi!%20Quero%20comprar%20um%20produto%20da%20MoveRio"
+              target="_blank"
+              class="btn-primary"
+              >Falar no WhatsApp</a
+            >
+            <a
+              href="https://www.instagram.com/moverio.resendee/"
+              target="_blank"
+              class="btn-outline"
+              >Instagram</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!--Footer-->
+
       <footer class="footer">
         <div class="container">
           <p>© 2026 Moverio</p>
           <p>Moda fitness feminina • Conforto • Estilo • Movimento</p>
-          <p class="creditos">
-          Desenvolvido por Gustavo Paes
-        </p>
+          <p class="creditos">Desenvolvido por Gustavo Paes</p>
         </div>
       </footer>
     </div>
-
 
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
